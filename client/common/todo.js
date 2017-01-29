@@ -32,17 +32,17 @@ data = data || {};
         /*generateElement({
          id: "123",
          code: "1",
-         title: "asd",
-         date: "22/12/2013",
-         description: "Blah Blah"
+         title: "test 1",
+         date: "29/01/2017",
+         description: "Test Blah Blah"
          });*/
 
         /*removeElement({
          id: "123",
          code: "1",
-         title: "asd",
-         date: "22/12/2013",
-         description: "Blah Blah"
+         title: "test 2",
+         date: "29/01/2017",
+         description: "Test 2 string"
          });*/
 
         $.each(codes, function (index, value) {
