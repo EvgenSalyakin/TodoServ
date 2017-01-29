@@ -9,6 +9,8 @@
   "author": "Evgen",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.14.1"
+    "body-parser": "^1.16.0",
+    "express": "^4.14.1",
+    "mongodb": "^2.2.22"
   }
 }

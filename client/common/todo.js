@@ -1,7 +1,7 @@
 var todo = todo || {},
     data = JSON.parse(localStorage.getItem("todoData"));
+    data = data || {};
 
-data = data || {};
 
 (function(todo, data, $) {
 
@@ -203,6 +203,39 @@ data = data || {};
         data = {};
         localStorage.setItem("todoData", JSON.stringify(data));
         $("." + defaults.todoTask).remove();
+    };
+
+    todo.load = function () {
+       // var d = data;
+
+        $.post('/load',function (result) {
+            console.log('befor data',data);
+            console.log('load data',result);
+            $.each(data, function (index, params) {
+                removeElement(params);
+            });
+            //d = result[0];
+            data = result[0];
+            $.each(data, function (index, params) {
+                generateElement(params);
+            });
+            console.log('after data',data);
+        })
+    };
+
+    todo.save = function () {
+        console.dir(data);
+        $.ajax({
+            url: '/save',
+            method: 'POST',
+            data: JSON.stringify(data),
+            contentType: 'application/json; charset=utf-8',
+            success: function (result) {
+                console.log(result);
+            }
+        // },data,function (result) {
+        //     console.log('load data');
+        })
     };
 
 })(todo, data, jQuery);
