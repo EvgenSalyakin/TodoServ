@@ -7,6 +7,7 @@
     "start": "node server.js"
   },
   "author": "Evgen",
+  "repository": "https://github.com/EvgenSalyakin/TodoServ.git",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.16.0",
